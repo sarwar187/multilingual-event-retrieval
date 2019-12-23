@@ -1,0 +1,13 @@
+<parameters>
+     <memory>2G</memory>
+     <index>/mnt/nfs/work1/smsarwar/ask/small_data/ace/english/index</index>
+     <stemmer>
+       <name>krovetz</name>
+     </stemmer>
+     <corpus>
+       <path>/mnt/nfs/work1/smsarwar/ask/small_data/ace/english/indri_raw/</path>
+       <class>trectext</class>
+     </corpus>
+     <field><name>TEXT</name></field>
+</parameters>
+

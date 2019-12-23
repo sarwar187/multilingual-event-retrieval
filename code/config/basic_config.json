@@ -1,0 +1,24 @@
+{
+    "data": "small_data",
+    "topk": 10,
+    "concepts_per_document":10, 
+    "annotator": {
+        "name": "spotlight",
+        "token": "92526c8b-3fdb-405d-972a-98d29b1adf0d-843339462",
+        "threshold": 0.2
+    },
+    "dataset": {
+        "name": "robust_new"
+    },
+    "directories": {
+        "query_to_docs": "query_to_docs",
+        "query_to_rel_docs": "rel_docs/docs",
+        "query_to_rel_docids": "rel_docs/ids",
+        "query_to_annotated_docs": "annotated_docs"
+    }, 
+    "files":{
+        "query_performance": "query_MAP.txt",
+        "document_to_entities": "doc_to_ent.json",
+        "query_description": "topic_description.json"
+    }
+}
