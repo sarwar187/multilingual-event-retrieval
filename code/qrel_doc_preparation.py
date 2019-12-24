@@ -1,21 +1,6 @@
 import json 
 import os 
 
-# print(os.getcwd())
-# english_train = json.load(open(os.path.join(os.getcwd(), "ace2005-preprocessing/output_english/train.json")))
-# english_val = json.load(open(os.path.join(os.getcwd(), "ace2005-preprocessing/output_english/dev.json")))
-# english_test = json.load(open(os.path.join(os.getcwd(), "ace2005-preprocessing/output_english/test.json")))
-
-# english_all = english_train + english_val + english_test
-
-# json.dump(english_all, open("small_data/ace/english/raw/raw.json", "w"))
-
-# print(len(english_train[0].keys()))
-# print(english_train[0].keys())
-# print(len(english_val))
-# print(len(english_test))
-
-
 def create_query_to_id_dictionary():
     dict_raw = json.load(open("small_data/ace/english/raw/raw.json"))
     print(len(dict_raw))
