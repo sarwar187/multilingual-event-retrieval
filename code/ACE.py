@@ -4,13 +4,6 @@ class ACE:
         self.token = config["annotator"]["token"]
         self.threshold = config["annotator"]["threshold"]
         self.query_description = ""
-        
-    
-
-
-    
-
-
 
     def create_queries(self, config):
         """[summary]
