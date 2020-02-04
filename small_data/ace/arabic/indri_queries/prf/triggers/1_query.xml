@@ -1,0 +1,135 @@
+<parameters>
+<index>/mnt/scratch/smsarwar/better/small_data/ace/english/index</index>
+<count>1000</count>
+<trecFormat>true</trecFormat>
+<runID>91</runID>
+<retModel>prf</retModel>
+<query>
+<number>29</number>
+<text>To challenge	</text>
+</query>
+<query>
+<number>21</number>
+<text>Appointment	</text>
+</query>
+<query>
+<number>1</number>
+<text>For being held	</text>
+</query>
+<query>
+<number>10</number>
+<text>Warranty	</text>
+</query>
+<query>
+<number>6</number>
+<text>Processes	</text>
+</query>
+<query>
+<number>5</number>
+<text>the previous	</text>
+</query>
+<query>
+<number>2</number>
+<text>The election	</text>
+</query>
+<query>
+<number>18</number>
+<text>formation	</text>
+</query>
+<query>
+<number>15</number>
+<text>death	</text>
+</query>
+<query>
+<number>14</number>
+<text>Injured	</text>
+</query>
+<query>
+<number>20</number>
+<text>The trial	</text>
+</query>
+<query>
+<number>23</number>
+<text>Accuse	</text>
+</query>
+<query>
+<number>16</number>
+<text>Imprisoned	</text>
+</query>
+<query>
+<number>26</number>
+<text>Release	</text>
+</query>
+<query>
+<number>7</number>
+<text>talks	</text>
+</query>
+<query>
+<number>31</number>
+<text>Delivery	</text>
+</query>
+<query>
+<number>3</number>
+<text>Selection	</text>
+</query>
+<query>
+<number>9</number>
+<text>Contact	</text>
+</query>
+<query>
+<number>12</number>
+<text>Pretend	</text>
+</query>
+<query>
+<number>13</number>
+<text>Resigning	</text>
+</query>
+<query>
+<number>24</number>
+<text>Be convicted	</text>
+</query>
+<query>
+<number>22</number>
+<text>They give birth	</text>
+</query>
+<query>
+<number>27</number>
+<text>Fine	</text>
+</query>
+<query>
+<number>33</number>
+<text>acquittal	</text>
+</query>
+<query>
+<number>8</number>
+<text>Her marriage	</text>
+</query>
+<query>
+<number>17</number>
+<text>Purchase	</text>
+</query>
+<query>
+<number>4</number>
+<text>Leaves	</text>
+</query>
+<query>
+<number>32</number>
+<text>Divorced	</text>
+</query>
+<query>
+<number>11</number>
+<text>The complaint	</text>
+</query>
+<query>
+<number>28</number>
+<text>Amnesty	</text>
+</query>
+<query>
+<number>25</number>
+<text>bankruptcy	</text>
+</query>
+<fbDocs>100</fbDocs>
+<fbTerms>10</fbTerms>
+<fbMu>0.5</fbMu>
+<fbOrigWeight>0.5</fbOrigWeight>
+</parameters>

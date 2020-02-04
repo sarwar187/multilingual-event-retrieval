@@ -1,0 +1,139 @@
+<parameters>
+<index>/mnt/scratch/smsarwar/better/small_data/ace/english/index</index>
+<count>1000</count>
+<trecFormat>true</trecFormat>
+<runID>115</runID>
+<retModel>prf</retModel>
+<query>
+<number>7</number>
+<text>meeting	meeting	meeting	Forum	meeting	meeting	Have a meeting	meet	meeting	General Assembly	General Assembly	meeting	meeting	meet	meet	Forum	meet	Forum	communicate with	meet	meet	Communication meeting	meeting	see	discuss	</text>
+</query>
+<query>
+<number>6</number>
+<text>conflict	provocative	Suppress	Thing	attack	Fried	Assault	Detonate	Assault	thorn	assassinate	war	kill	kill	conflict	conflict	assault	fight	kill	Assault	hit	Use of force	Assault	Declare war	conflict	</text>
+</query>
+<query>
+<number>1</number>
+<text>Evacuate	Arrive	Arrivals	Go to	Rush into	sneak into	Approach	via	leave	go	arrival	To	To	come	send	return	return	Go forward	Break away	Times	arrival	return	arrival	come	arrival	</text>
+</query>
+<query>
+<number>15</number>
+<text>Drown	dead	sacrifice	dead	shoot	Perish	suicide	suicide	Shot	Shoot	dead	kill	Died	Died	death	dead	death	Die	dead	Human life	Knocked to death	death	death	death	death	</text>
+</query>
+<query>
+<number>21</number>
+<text>Sentence	Sentence	Sentence	Sentence	Sentence	Sentence	judgment	Sentence	Sentence	Sentence	Sentence	Sentence	judgment	Sentence	Sentence	Sentence	Sentence	Sentence	Sentence	Sentence	</text>
+</query>
+<query>
+<number>23</number>
+<text>Send	To sue	</text>
+</query>
+<query>
+<number>29</number>
+<text>appeal	appeal	appeal	appeal	appeal	</text>
+</query>
+<query>
+<number>10</number>
+<text>Pay	Place	Place	Place	Compensation	Donate	Compensation	Accept	Compensation	cheat	Donate	Take out	Donate	Generous	Donate	Donate	donate	Express	add to	Donate	Donate	collection	investment	Get	</text>
+</query>
+<query>
+<number>14</number>
+<text>Minor injury	hurt	hurt	Selfimmolation	Injured	Injured	Suffer	Injured	Injured	Injured	hurt	Hurt	hurt	Injured	hurt	Injured	hurt	Injured	</text>
+</query>
+<query>
+<number>3</number>
+<text>Serve	Ren	appointment	appointment	Down to	Concurrently	Ren	Ren	Ren	Ren	Ren	determine	</text>
+</query>
+<query>
+<number>9</number>
+<text>phone	phone	Write	phone	Letter	letter	Call	phone	letter	Letter	</text>
+</query>
+<query>
+<number>2</number>
+<text>Be elected	Be elected	Be elected	Reelection	</text>
+</query>
+<query>
+<number>4</number>
+<text>Nominate	appointment	Nominate	for	for	for	Nominate	Nominate	</text>
+</query>
+<query>
+<number>22</number>
+<text>Born	Born	Born	Born	</text>
+</query>
+<query>
+<number>16</number>
+<text>Serve a sentence	Capture	Arrest	catch	Arrest	Arrest	Detention	Arrest	Capture	Capture	Capture	Charge back	arrest	Capture	Hunt	Capture	Capture	Detain	In custody	</text>
+</query>
+<query>
+<number>18</number>
+<text>set up	Established	set up	Established	Built	Found	Established	set up	Established	Established	Established	Established	Established	Established	Established	Built	composition	Inauguration	</text>
+</query>
+<query>
+<number>20</number>
+<text>Review	ask	Question	ask	Hearing	first instance	Trial	Trial	Trial	Review	Trial	Trial	Trial	first instance	First trial	Hearings	first instance	first instance	</text>
+</query>
+<query>
+<number>33</number>
+<text>Innocence	</text>
+</query>
+<query>
+<number>5</number>
+<text>Resign	Step down	recall	recall	resignation	Undo	Undo	</text>
+</query>
+<query>
+<number>11</number>
+<text>litigation	litigation	Lawsuit	Report	litigation	litigation	litigation	litigation	Complaint	Complain	litigation	</text>
+</query>
+<query>
+<number>13</number>
+<text>Behind closed doors	Behind closed doors	resignation	</text>
+</query>
+<query>
+<number>26</number>
+<text>freed	freed	Seek medical treatment	freed	freed	freed	</text>
+</query>
+<query>
+<number>12</number>
+<text>procession	procession	Demonstration	procession	protest	General strike	procession	assembly	Demonstration	Demonstration	</text>
+</query>
+<query>
+<number>19</number>
+<text>Sentence	death penalty	Shooting	death penalty	</text>
+</query>
+<query>
+<number>24</number>
+<text>guilty	</text>
+</query>
+<query>
+<number>8</number>
+<text>wedding	marry	Bride	married	Marry	marry	marriage	marriage	marry	marry	</text>
+</query>
+<query>
+<number>27</number>
+<text>Confiscation	Heavy penalty	fine	</text>
+</query>
+<query>
+<number>17</number>
+<text>Acquisition	buy	buy	auction	auction	auction	auction	auction	auction	auction	</text>
+</query>
+<query>
+<number>30</number>
+<text>merge	Build	merge	</text>
+</query>
+<query>
+<number>32</number>
+<text>divorce	divorce	divorce	</text>
+</query>
+<query>
+<number>25</number>
+<text>Bankruptcy	</text>
+</query>
+<query>
+<number>31</number>
+<text>Extradition	</text>
+</query>
+<fbDocs>100</fbDocs>
+<fbTerms>10</fbTerms>
+<fbMu>0.5</fbMu>
+<fbOrigWeight>0.5</fbOrigWeight>
+</parameters>

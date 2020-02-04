@@ -1,0 +1,139 @@
+<parameters>
+<index>/mnt/scratch/smsarwar/better/small_data/ace/english/index</index>
+<count>1000</count>
+<trecFormat>true</trecFormat>
+<runID>95</runID>
+<retModel>prf</retModel>
+<query>
+<number>7</number>
+<text>meeting	meeting	meeting	Forum	meeting	</text>
+</query>
+<query>
+<number>6</number>
+<text>conflict	provocative	Suppress	Thing	attack	</text>
+</query>
+<query>
+<number>1</number>
+<text>Evacuate	Arrive	Arrivals	Go to	Rush into	</text>
+</query>
+<query>
+<number>15</number>
+<text>Drown	dead	sacrifice	dead	shoot	</text>
+</query>
+<query>
+<number>21</number>
+<text>Sentence	Sentence	Sentence	Sentence	Sentence	</text>
+</query>
+<query>
+<number>23</number>
+<text>Send	To sue	</text>
+</query>
+<query>
+<number>29</number>
+<text>appeal	appeal	appeal	appeal	appeal	</text>
+</query>
+<query>
+<number>10</number>
+<text>Pay	Place	Place	Place	Compensation	</text>
+</query>
+<query>
+<number>14</number>
+<text>Minor injury	hurt	hurt	Selfimmolation	Injured	</text>
+</query>
+<query>
+<number>3</number>
+<text>Serve	Ren	appointment	appointment	Down to	</text>
+</query>
+<query>
+<number>9</number>
+<text>phone	phone	Write	phone	Letter	</text>
+</query>
+<query>
+<number>2</number>
+<text>Be elected	Be elected	Be elected	Reelection	</text>
+</query>
+<query>
+<number>4</number>
+<text>Nominate	appointment	Nominate	for	for	</text>
+</query>
+<query>
+<number>22</number>
+<text>Born	Born	Born	Born	</text>
+</query>
+<query>
+<number>16</number>
+<text>Serve a sentence	Capture	Arrest	catch	Arrest	</text>
+</query>
+<query>
+<number>18</number>
+<text>set up	Established	set up	Established	Built	</text>
+</query>
+<query>
+<number>20</number>
+<text>Review	ask	Question	ask	Hearing	</text>
+</query>
+<query>
+<number>33</number>
+<text>Innocence	</text>
+</query>
+<query>
+<number>5</number>
+<text>Resign	Step down	recall	recall	resignation	</text>
+</query>
+<query>
+<number>11</number>
+<text>litigation	litigation	Lawsuit	Report	litigation	</text>
+</query>
+<query>
+<number>13</number>
+<text>Behind closed doors	Behind closed doors	resignation	</text>
+</query>
+<query>
+<number>26</number>
+<text>freed	freed	Seek medical treatment	freed	freed	</text>
+</query>
+<query>
+<number>12</number>
+<text>procession	procession	Demonstration	procession	protest	</text>
+</query>
+<query>
+<number>19</number>
+<text>Sentence	death penalty	Shooting	death penalty	</text>
+</query>
+<query>
+<number>24</number>
+<text>guilty	</text>
+</query>
+<query>
+<number>8</number>
+<text>wedding	marry	Bride	married	Marry	</text>
+</query>
+<query>
+<number>27</number>
+<text>Confiscation	Heavy penalty	fine	</text>
+</query>
+<query>
+<number>17</number>
+<text>Acquisition	buy	buy	auction	auction	</text>
+</query>
+<query>
+<number>30</number>
+<text>merge	Build	merge	</text>
+</query>
+<query>
+<number>32</number>
+<text>divorce	divorce	divorce	</text>
+</query>
+<query>
+<number>25</number>
+<text>Bankruptcy	</text>
+</query>
+<query>
+<number>31</number>
+<text>Extradition	</text>
+</query>
+<fbDocs>100</fbDocs>
+<fbTerms>10</fbTerms>
+<fbMu>0.5</fbMu>
+<fbOrigWeight>0.5</fbOrigWeight>
+</parameters>

@@ -1,5 +1,5 @@
 <parameters>
-<index>/mnt/nfs/work1/smsarwar/ask/small_data/ace/english/index</index>
+<index>/mnt/scratch/smsarwar/better/small_data/ace/english/index</index>
 <count>1000</count>
 <trecFormat>true</trecFormat>
 <runID>4</runID>

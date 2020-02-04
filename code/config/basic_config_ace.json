@@ -1,7 +1,7 @@
 {
     "data": "small_data/ace",
     "index_dir": "index", 
-    "src_lang": "arabic",
+    "src_lang": "chinese",
     "trg_lang": "english",
     "approach": "prf",
     "query_type": "sentences", 

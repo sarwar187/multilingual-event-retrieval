@@ -1,0 +1,135 @@
+<parameters>
+<index>/mnt/scratch/smsarwar/better/small_data/ace/english/index</index>
+<count>1000</count>
+<trecFormat>true</trecFormat>
+<runID>115</runID>
+<retModel>prf</retModel>
+<query>
+<number>29</number>
+<text>To challenge	Appeal	The suit	His suit	Appeal	Resumed	Appeal	Appeal	Lawsuit	لاستئناف	Appeal	resume	The appeal	Petitioned	Resumption	Resumption	Appeal	Resumption	</text>
+</query>
+<query>
+<number>21</number>
+<text>Appointment	Judgment	To a prison sentence	Verdict innocently	To execute him	the prison	Prison sentence	punish	She ruled	She ruled	Provisions	Rule	Fine	Imprisonment	Imprisonment	the prison	Provisions	Two provisions	Judgments	Judgments	Judgments	Judgments	Judgments	Penalties	Residence	</text>
+</query>
+<query>
+<number>1</number>
+<text>For being held	Attention	Watch	To release	Visit it	Oar	the visit	Visit	Oar	a tour	Visit	Heads	Visit	a tour	Visit	To cross	Visit	Will visit	Transferring	I headed	They headed	withdrawal	Spread	Spread	withdrawal	</text>
+</query>
+<query>
+<number>10</number>
+<text>Warranty	bribe	Fine	happened	Budget	The money	Conversion	We provide	Subsidies	the support	Spending	Help	Grant	Exports	Debts	Received	Submit	Pay	Recovered	The donor	Recovery	Lend it to	Warranty	Submitted	the support	</text>
+</query>
+<query>
+<number>6</number>
+<text>Processes	Uprising	A coup	Launch it	Release it	Release	Confrontations	Riot	destruction	Aggression	Events	has crashed	Detonation	change	Explosion	Explosion	Assaults	Assaults	Rose up	For war	Beaten	Assaulted	To destroy	the war	Aiming	</text>
+</query>
+<query>
+<number>5</number>
+<text>the previous	Leaves	To resign	Enough	Sack	Departure	His resignation	the article	Resigned	The former	Resigned	Dropp off	Stop it	arrested	Disqualified	Defeat him	the previous	Deposed	Judgment	Resigned	His resignation	Resignation	Sack him	Overthrow	Resignation	</text>
+</query>
+<query>
+<number>2</number>
+<text>The election	Selection	The election	The election	selected	election	The Elect	You will be elected	The Elect	The Elect	His victory	The election	The election	Be elected	The election	The election	Defeat him	the win	The election	The election	The election	The election	The election	The election	The election	</text>
+</query>
+<query>
+<number>18</number>
+<text>formation	Create	formation	Establishing	to shape	formation	Do	Selection	Selection	</text>
+</query>
+<query>
+<number>15</number>
+<text>death	Assassination	Assassinations	Assassinations	He was assassinated	Assassinations	Assassinations	You are free	Assassinations	Assassinations	Dead	Killed	Killed	Died	Killed	the kill	She was killed	Killed	Massacres	killing	killing	Killed	Killed	To kill	killing	</text>
+</query>
+<query>
+<number>14</number>
+<text>Injured	Hit	Hit	infection	Wound	Hit	Wounded	Hit	Hit	Wounded	Hit	Was injured	infection	To process	Was injured	infection	Wounded	Hit	Hit	Hit him	Hit	Hit	Hit	Hit	Wounded	</text>
+</query>
+<query>
+<number>20</number>
+<text>The trial	trial	The trial	The trial	The trial	Will be tried	trial	Listen	Questioning	trial	Try it	trial	The trial	trial	Convening	Its sessions	trial	trial	Investigation	The trial	trial	trial	trial	session	To try	</text>
+</query>
+<query>
+<number>23</number>
+<text>Accuse	The accusation	The accusation	The accusation	The charge	She accused them	The appendices	Condemned	accuse	Be convicted	Convicted	Accused	She stopped	Charge her	And accuses	accuse	Accused	Appendices	Accuse him	debt	Accused	charge	Judgment	Charge	Accuse	</text>
+</query>
+<query>
+<number>16</number>
+<text>Imprisoned	Arrested	Arrest	Arrest	Arrest	I arrested him	Arrested	Arrest him	Arrest him	Captured	Arrest	Captured	Arrest	I stopped them	لولبض	detained	Arrest	I stopped them	Arrested	Arrested	Imprisonment	the prison	She stopped	She stopped	Stop	</text>
+</query>
+<query>
+<number>26</number>
+<text>Release	Will be released	release	release	Released	Released	Was released	Released	Released	Released	Released	Release	Acquitted	He was arrested	Clear my captivity	Release	To release	Release	Released	release	Release	Released	Released	Release	Excuse me	</text>
+</query>
+<query>
+<number>7</number>
+<text>talks	His discussions	Visit	Can	To meet	لقائه	meetings	They met	Their meeting	Met	Receive	Receive	Meeting	he met	Discussions	Discussions	Was discussed	summit	Like	he met	Summoned	His meeting	To meet her	Point	Meet	</text>
+</query>
+<query>
+<number>31</number>
+<text>Delivery	Hand it over	Hand over	Delivery	Hand it over	to hand in	</text>
+</query>
+<query>
+<number>3</number>
+<text>Selection	Eye	a sample	لتولي	inauguration	is back	Back	to assign	ختياره	was established	Designation	He will appoint them	To install	Designation	the new	to shape	Combine it	Will work	Designation	For office	Become	Morning	The presidency	Authority	To install	</text>
+</query>
+<query>
+<number>9</number>
+<text>Contact	Receive	Communicated	Connection	Contact	cable	call	statement	Telecom	Contact	call	Modern	With a message	His message	the message	Dialogue	Dialogue	With a message	Telecommunications	talks	Negotiations	Telecommunications	Telecommunications	Telecommunications	Submitted	</text>
+</query>
+<query>
+<number>12</number>
+<text>Pretend	Pretend	To pretend	Demonstrations	Protests	For a march	went out	Demonstrations	Pretend	Gathered	Marches	The demonstration	Demonstrations	Gathered	The demonstrators	Demonstrations	demonstration	Pretend	The demonstration	Pretend	Condemns	Protests	Marches	Demonstrations	Marches	</text>
+</query>
+<query>
+<number>13</number>
+<text>Resigning	Close	a ban	Close	closing	Close	Blocking	Independence	</text>
+</query>
+<query>
+<number>24</number>
+<text>Be convicted	They were accused	Convict him	condemnation	Their conviction	</text>
+</query>
+<query>
+<number>22</number>
+<text>They give birth	Have children	Birth	To have children	Is born	</text>
+</query>
+<query>
+<number>27</number>
+<text>Fine	Clamped	the fine	She ruled	Fine	Fine	Fine	Pay	Fine	Warranty	Fine	Fine	Fined	compensation	To pay	Compensation	To pay	Fined	Fine	To pay	Fine	On bail	Fine	Fine	Fines	</text>
+</query>
+<query>
+<number>33</number>
+<text>acquittal	stood up	Amnesty	</text>
+</query>
+<query>
+<number>8</number>
+<text>Her marriage	Her marriage	marriage	Marry	Her marriage	marriage	يتزوجان	Her marriage	Their marriage	marriage	marriage	got married	A marriage	Get married	marriage	His marriage	</text>
+</query>
+<query>
+<number>17</number>
+<text>Purchase	trade	Buy	she bought	Purchase	To supply	To supply	Would buy	</text>
+</query>
+<query>
+<number>4</number>
+<text>Leaves	To be nominated	nomination	nomination	nomination	</text>
+</query>
+<query>
+<number>32</number>
+<text>Divorced	Divorced	Divorce	Divorce	</text>
+</query>
+<query>
+<number>11</number>
+<text>The complaint	Lawsuit	</text>
+</query>
+<query>
+<number>28</number>
+<text>Amnesty	Pardons	</text>
+</query>
+<query>
+<number>25</number>
+<text>bankruptcy	</text>
+</query>
+<fbDocs>100</fbDocs>
+<fbTerms>10</fbTerms>
+<fbMu>0.5</fbMu>
+<fbOrigWeight>0.5</fbOrigWeight>
+</parameters>
