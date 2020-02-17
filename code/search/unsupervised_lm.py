@@ -2,8 +2,8 @@
 from sentence_transformers import SentenceTransformer
 import numpy as np
 import scipy
-
 import logging
+
 logger = logging.getLogger('better')
 hdlr = logging.FileHandler('better.log')
 formatter = logging.Formatter('%(asctime)s %(levelname)s %(message)s')
@@ -19,7 +19,7 @@ class Unsupervised:
         embedder = SentenceTransformer('bert-base-nli-stsb-mean-tokens')
         sentences_embeddings = embedder.encode(sentences)
         return sentences_embeddings        
-
+    
     def roberta_representation(self, sentences):
         embedder = SentenceTransformer('roberta-base-nli-stsb-mean-tokens')
         sentences_embeddings = embedder.encode(sentences)
