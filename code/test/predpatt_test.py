@@ -7,8 +7,6 @@ pp = PredPatt.from_sentence('At the Pentagon briefing today, General Stanley McC
 # print(pp.event_dict)
 # print(pp.events)
 
-
-
 for event in pp.events:
     print(event)
     for argument in event.arguments:

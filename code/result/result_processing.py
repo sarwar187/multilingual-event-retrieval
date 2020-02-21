@@ -26,7 +26,7 @@ src_lang = "chinese"
 trg_lang = "english"
 representations = ["", "", "bert"]
 approaches = ["ql", "prf", "unsupervised_lm"]
-query_types = ["sentences", "triggers"]
+query_types = ["sentences", "triggers", "combined_query"]
 df_array = []
     
 for tuple in zip(approaches, representations):
@@ -34,8 +34,14 @@ for tuple in zip(approaches, representations):
     approach = tuple[0]
     representation = tuple[1]
     for query_type in query_types:
+        
         if approach == "unsupervised_lm" and (representation=="" or query_type=="triggers"):
             continue
+        if approach == "ql" and query_type=="combined_query":
+            continue
+        if approach == "prf" and query_type=="combined_query":
+            continue
+            
         print(os.path.join(data_directory, trg_lang, "results", "data", src_lang, approach, representation, query_type, "output.res"))
         result_file = open(os.path.join(data_directory, trg_lang, "results", "data", src_lang, approach, representation, query_type, "output.res"))
         result_strings = result_file.readlines()

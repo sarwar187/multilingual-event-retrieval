@@ -24,7 +24,6 @@ def eval(qrel_file_path, run_file_path):
     p20 = te.get_precision(depth=20)
     map = te.get_map()
     rprec = te.get_rprec()
-    run_object = r1.evaluate_run(qrels, per_query=True)
     
     return round(p5, 4), round(p10, 4), round(p20, 4), round(map, 4), round(rprec, 4)
 

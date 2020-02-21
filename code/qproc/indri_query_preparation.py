@@ -80,6 +80,44 @@ def sample_queries_for_types(df, query_type, num_sentences = 1):
     return query2text
 
 
+def sample_queries_for_combined_types(df, num_sentences = 1, randomized = False):
+    """[Samples query sentences for a specific event type]    
+    Arguments:
+        df {[dataframe]} -- [a dataframe containing all the queries (sentence and phrase) along with the event types]
+        query_type {[type]} -- [sentence or trigger. Trigger would justify the importance of rationale annotation]    
+    Keyword Arguments:
+        num_sentences {int} -- [number of example events. each time a different event example is sampled.] (default: {1})    
+    Returns:
+        [dict] -- [event_type and sentences belonging to that type]
+    """
+    column_name = "sentence_translation"
+    trigger_column_name = "trigger_translation"
+
+    query2count = {}
+    query2text = {}
+    query2triggers = {} 
+
+    for i, event_type in enumerate(df['Event_Type']):
+        if df[column_name][i].strip() == "dummy":
+            continue
+        event_type.strip()
+        if event_type in query2text:
+            if query2count[event_type] < num_sentences:    
+                st = query2text[event_type]
+                st = re.sub(r'[^\w\s]','',st)   
+                st+= df[column_name][i] + "\t"
+                st_trigger = query2triggers[event_type]
+                st_trigger+= df[trigger_column_name][i] + "\t"
+                query2text[event_type] = st
+                query2triggers[event_type] = st_trigger
+                query2count[event_type]+=1
+        else:
+            query2text[event_type] = df[column_name][i].strip() + "\t"
+            query2triggers[event_type] = df[trigger_column_name][i].strip() + "\t"
+            query2count[event_type] = 1
+
+    return query2text, query2triggers
+
 
 def main():
     config = json.load(open("code/config/basic_config_ace.json"))

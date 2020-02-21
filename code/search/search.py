@@ -5,7 +5,7 @@ import re
 import os
 import sys 
 
-from code.search.unsupervised_lm import Unsupervised
+from code.search.unsupervised_lm import Unsupervised_LM
 from code.eval.search_and_eval import eval
 
 import logging
@@ -38,7 +38,7 @@ def main():
     
     mode = "search"
     
-    unsupervised = Unsupervised(config)
+    unsupervised = Unsupervised_LM(config)
     documents = parse_indri_documents(os.path.join(data_directory, trg_lang, doc_dir, "docs.xml"))        
     documents_embeddings = unsupervised.bert_representation(documents)
     logger.info("Documents embeddings have been loaded")        
@@ -66,5 +66,6 @@ def main():
             print("{}\t{}\t{}\t{}\t{}\t{}".format(num_examples, p5, p10, p20, mAP, rprec))
             
     result_file.close()
+
 if __name__ == "__main__":
     main()
