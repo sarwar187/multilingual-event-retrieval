@@ -1,7 +1,7 @@
 from trectools import TrecRun, TrecEval, fusion, TrecQrel
 import os 
 
-language = "chinese"
+language = "arabic"
 
 #TODO: automate this 
 #def fuse_runs(run_file_dir1, run_file_dir2):
@@ -29,10 +29,41 @@ def eval(r1, qrels):
 
 result_file = open("output.res", "w")
 
-for num_examples in range(5, 6):
-    r1 = TrecRun("small_data/ace/english/runs/chinese/prf/triggers/" + str(num_examples) + "_run.xml")
+#just specify two directories
+dir1 = "small_data/ace/english/runs/" + language + "/prf/triggers/"
+dir2 = "/mnt/scratch/smsarwar/better/small_data/ace/english/runs/" + language + "/unsupervised_lm/bert/combined_query/"
+
+dir1_files = set()
+dir2_files = set()
+
+for name in os.listdir(dir1):
+    name_splitted = name.split(".")
+    #print(name_splitted[0].split("_"))
+    file_id = "_".join(name_splitted[0].split("_")[0:2])
+    dir1_files.add(file_id)
+
+for name in os.listdir(dir2):
+    name_splitted = name.split(".")
+    #print(name_splitted[0].split("_"))
+    file_id = name_splitted[0].strip()
+    print(file_id)
+    dir2_files.add(file_id)
+
+#print(dir1_files)
+#dir2_files = set(os.listdir(dir2))
+#print(dir2_files)
+
+intersection = dir1_files.intersection(dir2_files)
+print(len(intersection))
+
+for f in intersection: 
+    name = f.split(".")[0]
+    name_splitted = name.split("_")
+    timestr = name_splitted[0]
+    num_examples = name_splitted[1]
+    r1 = TrecRun("small_data/ace/english/runs/" + language + "/prf/triggers/" + f + "_run.xml")
     #r2 = TrecRun("small_data/ace/english/runs/chinese/ql/sentences/2_run.xml")
-    r2 = TrecRun("/mnt/scratch/smsarwar/better/small_data/ace/english/runs/chinese/unsupervised_lm/bert/combined_query/" + str(num_examples) + ".run")
+    r2 = TrecRun("/mnt/scratch/smsarwar/better/small_data/ace/english/runs/" + language + "/unsupervised_lm/bert/combined_query/" + f + ".run")
     qrels = TrecQrel("small_data/ace/english/queries/qrels.english_events.txt")
     # Easy way to create new baselines by fusing existing runs:
     fused_run = fusion.reciprocal_rank_fusion([r1,r2])

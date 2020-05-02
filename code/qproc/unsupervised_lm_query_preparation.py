@@ -5,6 +5,7 @@ import re
 import os
 from code.qproc.indri_query_preparation import sample_queries_for_types
 from code.qproc.indri_query_preparation import sample_queries_for_combined_types
+import time
 import logging
 
 logger = logging.getLogger('better')
@@ -38,7 +39,7 @@ def main():
     for approach in approaches:
         for representation in representations:
             for query_type in query_types:
-                for num_examples in range(1,31):
+                for num_examples in range(1,11):
                     if query_type == "combined":
                         query2text, query2triggers = sample_queries_for_combined_types(df, num_sentences = num_examples)
                     else:    
@@ -64,9 +65,9 @@ def main():
                     query_dict["doc_dir"] = doc_dir #here we have a document directory instead of index directory because we do not need indexing for 16000 documents.
                     query_dict["queries"] = id2text
                     query_dict["triggers"] = id2triggers
-
+                    timestr = time.strftime("%Y%m%d-%H%M%S")
                     os.makedirs(os.path.join(data_directory, src_lang, approach + "_queries", representation, query_type), exist_ok=True)
-                    query_file = open(os.path.join(data_directory, src_lang, approach + "_queries", representation, query_type , str(num_examples) + "_query.json"), "w")
+                    query_file = open(os.path.join(data_directory, src_lang, approach + "_queries", representation, query_type , timestr + "_" + str(num_examples) + "_query.json"), "w")
                     json.dump(query_dict, query_file)
                     run_id+=1
 

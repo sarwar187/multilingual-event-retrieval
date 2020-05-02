@@ -28,7 +28,7 @@ def eval(qrel_file_path, run_file_path):
     return round(p5, 4), round(p10, 4), round(p20, 4), round(map, 4), round(rprec, 4)
 
 
-def search(data_directory, src_lang, trg_lang, approach, query_type, num_examples): 
+def search(data_directory, src_lang, trg_lang, approach, query_type, num_examples, timestr): 
     """[summary]
     constructs the query file path and the run file path and then dumps the result in the run file path
     Arguments:
@@ -39,9 +39,9 @@ def search(data_directory, src_lang, trg_lang, approach, query_type, num_example
         query_type {[string]} -- [indicate which part of the query to consider for retrieval, for example "trigger" for event trigger query type]
     """
     os.makedirs(os.path.join(os.getcwd(), data_directory, trg_lang, "runs", src_lang, approach, query_type), exist_ok=True)
-    run_file_path = os.path.join(os.getcwd(), data_directory, trg_lang, "runs", src_lang, approach, query_type, str(num_examples) + "_run.xml")
+    run_file_path = os.path.join(os.getcwd(), data_directory, trg_lang, "runs", src_lang, approach, query_type, timestr + "_" + str(num_examples) + "_run.xml")
     os.makedirs(os.path.join(os.getcwd(), data_directory, src_lang, "indri_queries", approach, query_type), exist_ok=True)
-    query_file_path = os.path.join(os.getcwd(), data_directory, src_lang, "indri_queries", approach, query_type, str(num_examples) + "_query.xml")
+    query_file_path = os.path.join(os.getcwd(), data_directory, src_lang, "indri_queries", approach, query_type, timestr + "_" + str(num_examples) + "_query.xml")
     cmd = "IndriRunQuery " + query_file_path + " > " + run_file_path
     print("running the search with {}".format(cmd))
     #returned_value = subprocess.call("module load indri/5.13", shell=True)
@@ -49,11 +49,24 @@ def search(data_directory, src_lang, trg_lang, approach, query_type, num_example
     print("output of Indri is {}".format(returned_value))
     return run_file_path, query_file_path
 
+def load_queries(query_directory):
+    files = os.listdir(query_directory)
+    query_files = []
+    for f in files:
+        print(f)
+        name = f.split(".")[0]
+        print(name)
+        name_splitted = name.split("_")
+        timestr = name_splitted[0]
+        num_examples = name_splitted[1]
+        file_name = f
+        query_files.append((timestr, num_examples, file_name))
+    return query_files
+
+
 def main():
     #would like to put a timestamp on result files 
-    desc2runobj = {} 
-    run_significance = {} 
-
+    
     config = json.load(open("code/config/basic_config_ace.json"))
     data_directory = config["data"]
     #indicates the language of query 
@@ -69,14 +82,17 @@ def main():
         
     approaches = ["ql", "prf"]
     query_types = ["sentences", "triggers"]
-    
+    query_dir = os.path.join(data_directory, src_lang, "universal_queries")     
     
     for approach in approaches:
         for query_type in query_types:            
             os.makedirs(os.path.join(data_directory, trg_lang, "results", "data", src_lang, approach, query_type), exist_ok=True)
             result_file = open(os.path.join(data_directory, trg_lang, "results", "data", src_lang, approach, query_type, "output.res"), "w")    
-            for num_examples in range(1,31):
-                run_file_path, _ = search(data_directory, src_lang, trg_lang, approach, query_type, num_examples)
+            query_files = load_queries(query_dir)
+            for query_file in query_files: 
+                timestr = query_file[0]
+                num_examples = int(query_file[1])
+                run_file_path, _ = search(data_directory, src_lang, trg_lang, approach, query_type, num_examples, timestr)
                 #print(run_file_path)
                 #print(query_file_path)
                 print(str(num_examples) + "\t" + src_lang + "\t" + trg_lang + "\t" + approach + "\t" + query_type)

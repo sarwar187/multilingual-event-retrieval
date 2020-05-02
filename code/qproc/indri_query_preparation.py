@@ -4,13 +4,24 @@ import json
 import re
 import os
 
-def query_container(id2text, field, query_type):
+
+def query_container(query_dict, query_type):
     """
     Given a query dictionary generate indri query xml
     :param query_dict: containing seeds
     :param field: text, name etc.
     :return: string that contains the query
     """
+    #   query_dict["run_id"] = run_id
+    #     query_dict["trg_lang"] = trg_lang
+    #     query_dict["doc_dir"] = doc_dir #here we have a document directory instead of index directory because we do not need indexing for 16000 documents.
+    #     query_dict["queries"] = id2text
+    #     query_dict["triggers"] = id2triggers
+
+    if query_type == "sentences":
+        id2text = query_dict["queries"]
+    else:
+        id2text = query_dict["triggers"]
     st = ''
     for key in id2text:
         query_string = id2text[key]
@@ -96,7 +107,7 @@ def sample_queries_for_combined_types(df, num_sentences = 1, randomized = False)
     query2count = {}
     query2text = {}
     query2triggers = {} 
-
+    df = df.sample(frac=1)
     for i, event_type in enumerate(df['Event_Type']):
         if df[column_name][i].strip() == "dummy":
             continue
@@ -118,6 +129,19 @@ def sample_queries_for_combined_types(df, num_sentences = 1, randomized = False)
 
     return query2text, query2triggers
 
+def load_queries(query_directory):
+    files = os.listdir(query_directory)
+    query_files = []
+    for f in files:
+        print(f)
+        name = f.split(".")[0]
+        print(name)
+        name_splitted = name.split("_")
+        timestr = name_splitted[0]
+        num_examples = name_splitted[1]
+        file_name = f
+        query_files.append((timestr, num_examples, file_name))
+    return query_files
 
 def main():
     config = json.load(open("code/config/basic_config_ace.json"))
@@ -130,31 +154,27 @@ def main():
     translation = config["translation"]
     index_dir = config["index_dir"]
     #query is event type
-    query2id = json.load(open(os.path.join(data_directory, src_lang, "queries", query2id_file)))
     df = pd.read_csv(os.path.join(data_directory, src_lang, "queries", translation, src_lang + "_translations.csv"), sep="\t")
     df['sentence_translation'].fillna("dummy", inplace=True)
     df['trigger_translation'].fillna("dummy", inplace=True)
-
+  
     approaches = ["ql", "prf"]
     query_types = ["sentences", "triggers"]
-
     run_id = 1
+
+    query_dir = os.path.join(data_directory, src_lang, "universal_queries")     
 
     for approach in approaches: 
         for query_type in query_types:
-            for num_examples in range(1,31):
-                query2text = sample_queries_for_types(df, query_type, num_sentences = num_examples)
-                id2text = {}
-
-                for key in query2text.keys():   
-                    text = query2text[key]
-                    id = query2id[key]
-                    id2text[id] = text
-
-                print("number of topics {}".format(len(id2text)))
-                query = query_container(id2text, "text", query_type)
+            query_files = load_queries(query_dir)
+            for query_file in query_files: 
+                timestr = query_file[0]
+                num_examples = int(query_file[1])
+                file_name = query_file[2]            
+                query_dict = json.load(open(os.path.join(query_dir, file_name)))
+                query = query_container(query_dict, query_type)
                 indri_query = query_xml_container(query, os.path.join(data_directory, trg_lang, index_dir), approach, run_id)
-                indri_query_file = open(os.path.join(data_directory, src_lang, "indri_queries", approach, query_type, str(num_examples) + "_query.xml"), "w")
+                indri_query_file = open(os.path.join(data_directory, src_lang, "indri_queries", approach, query_type, timestr + "_" + str(num_examples) + "_query.xml"), "w")
                 indri_query_file.write(indri_query)   
                 indri_query_file.close()
                 run_id+=1

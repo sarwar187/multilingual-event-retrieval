@@ -7,6 +7,7 @@
 # website: http://jupyter.org/
 
 data/*
+small_data/*
 
 .ipynb_checkpoints
 */.ipynb_checkpoints/*
