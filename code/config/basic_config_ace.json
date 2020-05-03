@@ -1,6 +1,9 @@
 {
     "data": "small_data/ace",
-    "index_dir": "index", 
+    "raw_dir": "raw",
+    "query_dir": "queries",
+    "index_dir": "index",
+    "raw_index_dir": "indri_raw",
     "src_lang": "chinese",
     "trg_lang": "english",
     "approach": "prf",

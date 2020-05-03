@@ -1,8 +1,9 @@
 import json 
 import os 
 
-def create_query_to_id_dictionary():
-    dict_raw = json.load(open("small_data/ace/english/raw/raw.json"))
+def create_query_to_id_dictionary(config):
+    dict_raw_dir = os.path.join(config["data"], config["src_lang"], config["raw_dir"], config["raw_dir"] + ".json")
+    dict_raw = json.load(open(dict_raw_dir))
     print(len(dict_raw))
 
     query_id = 1 
@@ -17,11 +18,11 @@ def create_query_to_id_dictionary():
     
     return query2id, dict_raw
 
-def create_trec_data(query2id, dict_raw):
+def create_trec_data(query2id, dict_raw, config):
     docno = 1
-    qrel_file = open("small_data/ace/english/queries/qrels.english_events.txt", "w")
-    indri_doc_file = open("small_data/ace/english/indri_raw/docs.xml", "w")
-    query2id_file = open("small_data/ace/query2id.json", "w")
+    qrel_file = open(os.path.join(config["data"], config["src_lang"], config["query_dir"], "qrels." + config["src_lang"] + "_events.txt"), "w")
+    indri_doc_file = open(os.path.join(config["data"], config["src_lang"], config["raw_index_dir"], "docs.xml"), "w")
+    query2id_file = open(os.path.join(config["data"], config["query_to_id_file"]), "w")
     
     for item in dict_raw:
         text = item['sentence']
@@ -40,7 +41,8 @@ def create_trec_data(query2id, dict_raw):
     qrel_file.close()
     json.dump(query2id, query2id_file)
     indri_doc_file.close()
-    
 
-query2id, dict_raw  = create_query_to_id_dictionary()
-create_trec_data(query2id, dict_raw)
+
+config = json.load(open("code/config/basic_config_ace.json"))
+query2id, dict_raw  = create_query_to_id_dictionary(config)
+create_trec_data(query2id, dict_raw, config)
