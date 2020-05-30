@@ -64,32 +64,42 @@ def sample_queries_for_combined_types(df, num_sentences = 1, randomized = False)
     query2text = {}
     query2triggers = {} 
     for i, event_type in enumerate(df['Event_Type']):
-        if df[column_name][i].strip() == "dummy":
+        sentence = df[column_name][i].strip()
+        trigger = df[trigger_column_name][i].strip()
+        trigger = trigger.replace('\n', ' ')
+        trigger = trigger.replace('\t', ' ')
+        sentence = sentence.replace('\n', ' ')
+        sentence = sentence.replace('\t', ' ')
+
+        if sentence == "dummy" or trigger == "dummy" or len(sentence) == 0 or len(trigger) == 0:
             continue
-        event_type.strip()
+
+        event_type = event_type.strip()
+
         if event_type in query2text:
-            #if query2count[event_type] < num_sentences:    
             st = query2text[event_type]
             st = re.sub(r'[^\w\s]','',st)   
-            st+= df[column_name][i] + "\t"
+            st+= sentence + "\t"
             st_trigger = query2triggers[event_type]
-            st_trigger+= df[trigger_column_name][i] + "\t"
+            st_trigger+= trigger + "\t"
             query2text[event_type] = st
             query2triggers[event_type] = st_trigger
             query2count[event_type]+=1
         else:
-            query2text[event_type] = df[column_name][i].strip() + "\t"
-            query2triggers[event_type] = df[trigger_column_name][i].strip() + "\t"
+            query2text[event_type] = sentence + "\t"
+            query2triggers[event_type] = trigger + "\t"
             query2count[event_type] = 1
 
     query2textshuff = {}
     query2triggersshuff = {}
 
     for qid in query2text:
-        te = query2text[qid].split("\t")
-        tg = query2triggers[qid].split("\t")
+        te = query2text[qid].strip().split("\t")
+        tg = query2triggers[qid].strip().split("\t")
+        assert(len(te) == len(tg))
         for i, item in enumerate(te):
             if len(te[i]) == 0 or len(tg[i]) == 0:
+                #print(i)
                 te.pop(i)
                 tg.pop(i)
         temp_list = list(zip(te, tg))
@@ -109,7 +119,7 @@ def main():
     translation = config["translation"]
     doc_dir = config["index_dir"] #we are naming it as document directory because we do not build an index for unsupervised lm 
     #query is event type
-    query2id = json.load(open(os.path.join(data_directory, src_lang, "queries", query2id_file)))
+    query2id = json.load(open(os.path.join(data_directory, query2id_file)))
     df = pd.read_csv(os.path.join(data_directory, src_lang, "queries", translation, src_lang + "_translations.csv"), sep="\t")
     df['sentence_translation'].fillna("dummy", inplace=True)
     df['trigger_translation'].fillna("dummy", inplace=True)
@@ -129,8 +139,8 @@ def main():
             trigger = query2triggers[key]
             id2triggers[id] = trigger.strip()
             print(text)
-            #print("********************************************************************************")
-            #print(str(id) + "\t" + trigger)
+            print("********************************************************************************")
+            print(str(id) + "\t" + trigger)
             assert(len(text.strip().split("\t")) == len(trigger.strip().split("\t")))
             print("{} \t {}".format(key, text))
 

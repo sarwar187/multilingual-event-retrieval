@@ -2,7 +2,7 @@ import json
 import os 
 
 def create_query_to_id_dictionary(config):
-    dict_raw_dir = os.path.join(config["data"], config["src_lang"], config["raw_dir"], config["raw_dir"] + ".json")
+    dict_raw_dir = os.path.join(config["data"], config["trg_lang"], config["raw_dir"], config["raw_dir"] + ".json")
     dict_raw = json.load(open(dict_raw_dir))
     print(len(dict_raw))
 
@@ -20,8 +20,8 @@ def create_query_to_id_dictionary(config):
 
 def create_trec_data(query2id, dict_raw, config):
     docno = 1
-    qrel_file = open(os.path.join(config["data"], config["src_lang"], config["query_dir"], "qrels." + config["src_lang"] + "_events.txt"), "w")
-    indri_doc_file = open(os.path.join(config["data"], config["src_lang"], config["raw_index_dir"], "docs.xml"), "w")
+    qrel_file = open(os.path.join(config["data"], config["trg_lang"], config["query_dir"], "qrels." + config["trg_lang"] + "_events.txt"), "w")
+    indri_doc_file = open(os.path.join(config["data"], config["trg_lang"], config["raw_index_dir"], "docs.xml"), "w")
     query2id_file = open(os.path.join(config["data"], config["query_to_id_file"]), "w")
     
     for item in dict_raw:

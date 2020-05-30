@@ -25,7 +25,7 @@ def main():
     translation = config["translation"]
     doc_dir = config["index_dir"] #we are naming it as document directory because we do not build an index for unsupervised lm 
     #query is event type
-    query2id = json.load(open(os.path.join(data_directory, src_lang, "queries", query2id_file)))
+    query2id = json.load(open(os.path.join(data_directory, query2id_file)))
     df = pd.read_csv(os.path.join(data_directory, src_lang, "queries", translation, src_lang + "_translations.csv"), sep="\t")
     df['sentence_translation'].fillna("dummy", inplace=True)
     df['trigger_translation'].fillna("dummy", inplace=True)

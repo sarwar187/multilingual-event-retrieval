@@ -82,7 +82,8 @@ def main():
         
     approaches = ["ql", "prf"]
     query_types = ["sentences", "triggers"]
-    query_dir = os.path.join(data_directory, src_lang, "universal_queries")     
+
+    query_dir = os.path.join(data_directory, src_lang, "universal_queries")
     
     for approach in approaches:
         for query_type in query_types:            

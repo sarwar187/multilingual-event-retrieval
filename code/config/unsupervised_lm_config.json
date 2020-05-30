@@ -1,13 +1,13 @@
 {
-    "data": "small_data/ace",
+    "data": "large_data/ace",
     "index_dir": "indri_raw", 
-    "src_lang": "english",
-    "trg_lang": "arabic",
+    "src_lang": "arabic",
+    "trg_lang": "english",
     "approach": "unsupervised_lm",
     "representation": "bert",
     "query_type": "sentences", 
     "topk": 10,
     "query_to_id_file": "query2id.json", 
-    "concepts_per_document":10, 
+    "concepts_per_document":10,
     "translation": "google"
 }
